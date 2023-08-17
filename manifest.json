@@ -1,0 +1,27 @@
+{
+  "name": "ChatGPT - GMail",
+  "version": "1.0.0",
+  "description": "Extension to connect GMail with ChatGPT",
+  "manifest_version": 3,
+  "author": "Michael Gorman",
+  "icons": {
+    "16": "Gmail16.png",
+    "48": "Gmail48.png",
+    "128": "Gmail128.png"
+  },
+  "action": {
+    "default_popup": "index.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["gmail-script.js"]
+    }
+  ], 
+  "host_permissions": [
+    "https://mail.google.com/*"
+  ]
+}
